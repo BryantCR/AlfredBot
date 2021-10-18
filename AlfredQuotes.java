@@ -1,6 +1,6 @@
 import java.util.Date;
 public class AlfredQuotes {
-     /*
+    /*
     * Inputs: None
     * Return Type: String
     * Description: Returns a generic greeting that Alfred will say to anyone.
@@ -21,7 +21,9 @@ public class AlfredQuotes {
     */
     public String guestGreeting(String name, String dayPeriod) {
         // YOUR CODE HERE
-        return "place holder for guest greeting return string";
+        //String greeting = System.out.println("Hello Alfred"); 
+        //return greeting;
+        return String.format("Good %s, Mr %s. Glad to see you.", dayPeriod, name);
     }
     /* 
     * Inputs: None
@@ -30,7 +32,7 @@ public class AlfredQuotes {
     */
     public String dateAnnouncement() {
         // YOUR CODE HERE
-        return "place holder for date announcement return string";
+        return String.format("It is currently %s", new Date());
     }
     
     /*********************************************
@@ -51,9 +53,17 @@ public class AlfredQuotes {
     * 
     * Tip: Use the indexOf String method
     */
-    public String respondBeforeAlexis(String conversation) {
-        // YOUR CODE HERE
-        return "place holder for snarky response return string";
+    public String answeringBeforeAlexis(String phrase) {
+
+        if(phrase.indexOf("Alexis") > -1) {
+            return "She's really of no help. What can I get for you?";
+        }
+
+        if (phrase.indexOf("Alfred") > -1) {
+            return "At your service, naturally. How may I be of assistance?";
+        }
+
+        return "Right. And with that I shall retire.";
     }
     // NINJA BONUS
     // Write your own AlfredQuote method using any of the String methods you have learned!
